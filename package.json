@@ -1,0 +1,22 @@
+{
+  "name": "vector.ts",
+  "version": "1.0.0",
+  "description": "A simple vector class written in TypeScript",
+  "keywords": ["math", "physic", "vector"],
+  "author": "Andy Mitschke (https://github.com/AndyMitschke)",
+  "license": "MIT",
+  "homepage": "https://github.com/AndyMitschke/Vector.ts#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndyMitschke/Vector.ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AndyMitschke/Vector.ts/issues"
+  },
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
