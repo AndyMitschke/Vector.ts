@@ -213,7 +213,7 @@ class Vector
     {
       return Vector.copy(vector).up();
     }
-    return new Vector().up();
+    return new Vector(1, 0).up();
   }
 
   public static down(vector?: Vector): Vector
@@ -222,7 +222,7 @@ class Vector
     {
       return Vector.copy(vector).down();
     }
-    return new Vector().down();
+    return new Vector(1, 0).down();
   }
 
   public static left(vector?: Vector): Vector
@@ -231,7 +231,7 @@ class Vector
     {
       return Vector.copy(vector).left();
     }
-    return new Vector().left();
+    return new Vector(1, 0).left();
   }
 
   public static right(vector?: Vector): Vector
@@ -240,7 +240,7 @@ class Vector
     {
       return Vector.copy(vector).right();
     }
-    return new Vector().right();
+    return new Vector(1, 0).right();
   }
 
   public static createUnitVector(direction: number): Vector
