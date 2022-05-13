@@ -23,28 +23,28 @@ vec1.copy(vec2)
 ```Javascript
 const vec = new Vector(1, 2)
 vec.up()
-// vec { x: 0, y: -1 }
+// vec { x: 0, y: -2.2361 }
 ```
 
 ### .down()
 ```Javascript
 const vec = new Vector(1, 2)
 vec.down()
-// vec { x: 0, y: 1 }
+// vec { x: 0, y: 2.2361 }
 ```
 
 ### .left()
 ```Javascript
 const vec = new Vector(1, 2)
 vec.left()
-// vec { x: -1, y: 0 }
+// vec { x: -2.2361, y: 0 }
 ```
 
 ### .right()
 ```Javascript
 const vec = new Vector(1, 2)
 vec.right()
-// vec { x: 1, y: 0 }
+// vec { x: 2.2361, y: 0 }
 ```
 
 ### .add(Vector)
@@ -96,6 +96,27 @@ vec.limit(0.7)
 const vec = new Vector(1, 2)
 vec.zero()
 // vec { x: 0, y: 0 }
+```
+
+### .round()
+```Javascript
+const vec = new Vector(1.5, 2.2)
+vec.round()
+// vec { x: 2, y: 2 }
+```
+
+### .floor()
+```Javascript
+const vec = new Vector(1.5, 2.2)
+vec.floor()
+// vec { x: 1, y: 2 }
+```
+
+### .ceil()
+```Javascript
+const vec = new Vector(1.5, 2.2)
+vec.ceil()
+// vec { x: 2, y: 3 }
 ```
 
 ### .flip()
@@ -173,28 +194,40 @@ const vec2 = Vector.copy(vec1)
 // vec2 { x: 2, y: 3 }
 ```
 
-### Vector.up()
+### Vector.up(vector?)
 ```Javascript
 const vec = Vector.up()
 // vec { x: 0, y: -1 }
+const vec1 = Vector.up(1, 2)
+const vec2 = Vector.up(vec1)
+// vec { x: 0, y: -2.2361 }
 ```
 
-### Vector.down()
+### Vector.down(vector?)
 ```Javascript
 const vec = Vector.down()
 // vec { x: 0, y: 1 }
+const vec1 = Vector.down(1, 2)
+const vec2 = Vector.down(vec1)
+// vec { x: 0, y: 2.2361 }
 ```
 
-### Vector.left()
+### Vector.left(vector?)
 ```Javascript
 const vec = Vector.left()
 // vec { x: -1, y: 0 }
+const vec1 = Vector.left(1, 2)
+const vec2 = Vector.left(vec1)
+// vec { x: -2.2361, y: 0 }
 ```
 
-### Vector.right()
+### Vector.right(vector?)
 ```Javascript
 const vec = Vector.right()
 // vec { x: 1, y: 0 }
+const vec1 = Vector.right(1, 2)
+const vec2 = Vector.right(vec1)
+// vec { x: 2.2361, y: 0 }
 ```
 
 ### Vector.add(Vector, Vector)
@@ -241,6 +274,27 @@ const vec2 = Vector.normalize(vec1)
 const vec1 = new Vector(1, 2)
 const vec2 = Vector.limit(1.5)
 // vec2 { x: 0.6708, y: 1.3416 }
+```
+
+### Vector.round(Vector)
+```Javascript
+const vec1 = new Vector(1.5, 2.2)
+const vec2 = Vector.round(vec1)
+// vec2 { x: 2, y: 2 }
+```
+
+### Vector.floor(Vector)
+```Javascript
+const vec1 = new Vector(1.5, 2.2)
+const vec2 = Vector.floor(vec1)
+// vec2 { x: 1, y: 2 }
+```
+
+### Vector.ceil(Vector)
+```Javascript
+const vec1 = new Vector(1.5, 2.2)
+const vec2 = Vector.ceil(vec1)
+// vec2 { x: 2, y: 3 }
 ```
 
 ### Vector.rotate(Vector, number)

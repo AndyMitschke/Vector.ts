@@ -49,29 +49,25 @@ class Vector
   
   public up(): Vector
   {
-    this.x = 0;
-    this.y = -1;
+    this.direction = Math.PI;
     return this;
   }
 
   public down(): Vector
   {
-    this.x = 0;
-    this.y = 1;
+    this.direction = 0;
     return this;
   }
 
   public left(): Vector
   {
-    this.x = -1;
-    this.y = 0;
+    this.direction = -Math.PI / 2;
     return this;
   }
 
   public right(): Vector
   {
-    this.x = 1;
-    this.y = 0;
+    this.direction = Math.PI / 2;
     return this;
   }
 
@@ -123,6 +119,27 @@ class Vector
   {
     this.x = 0;
     this.y = 0;
+    return this;
+  }
+
+  public round(): Vector
+  {
+    this.x = Math.round(this.x);
+    this.y = Math.round(this.y);
+    return this;
+  }
+
+  public floor(): Vector
+  {
+    this.x = Math.floor(this.x);
+    this.y = Math.floor(this.y);
+    return this;
+  }
+
+  public ceil(): Vector
+  {
+    this.x = Math.ceil(this.x);
+    this.y = Math.ceil(this.y);
     return this;
   }
 
@@ -190,23 +207,39 @@ class Vector
 
 
 
-  public static up(): Vector
+  public static up(vector?: Vector): Vector
   {
+    if(vector)
+    {
+      return Vector.copy(vector).up();
+    }
     return new Vector().up();
   }
 
-  public static down(): Vector
+  public static down(vector?: Vector): Vector
   {
+    if(vector)
+    {
+      return Vector.copy(vector).down();
+    }
     return new Vector().down();
   }
 
-  public static left(): Vector
+  public static left(vector?: Vector): Vector
   {
+    if(vector)
+    {
+      return Vector.copy(vector).left();
+    }
     return new Vector().left();
   }
 
-  public static right(): Vector
+  public static right(vector?: Vector): Vector
   {
+    if(vector)
+    {
+      return Vector.copy(vector).right();
+    }
     return new Vector().right();
   }
 
@@ -250,6 +283,21 @@ class Vector
   public static limit(vector: Vector, limit: number): Vector
   {
     return Vector.copy(vector).limit(limit);
+  }
+
+  public static round(vector: Vector): Vector
+  {
+    return Vector.copy(vector).round();
+  }
+
+  public static floor(vector: Vector): Vector
+  {
+    return Vector.copy(vector).floor();
+  }
+
+  public static ceil(vector: Vector): Vector
+  {
+    return Vector.copy(vector).ceil();
   }
 
   public static rotate(vector: Vector, radians: number): Vector
